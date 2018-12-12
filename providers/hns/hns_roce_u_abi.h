@@ -59,6 +59,19 @@ struct hns_roce_create_cq_resp {
 	__u64				cap_flags;
 };
 
+struct hns_roce_create_srq {
+	struct ibv_create_srq		ibv_cmd;
+	__u64				buf_addr;
+	__u64				db_addr;
+	__u64				que_addr;
+};
+
+struct hns_roce_create_srq_resp {
+	struct ib_uverbs_create_srq_resp	ibv_resp;
+	__u32					srqn;
+	__u32					reserved;
+};
+
 struct hns_roce_create_qp {
 	struct ibv_create_qp		ibv_cmd;
 	__u64				buf_addr;
